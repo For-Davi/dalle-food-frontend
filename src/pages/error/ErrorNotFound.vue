@@ -1,8 +1,8 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'ErrorNotFound',
+    name: 'ErrorNotFound',
 });
 </script>
 <template>
-  <section>Error Not Found</section>
+    <section>Error Not Found</section>
 </template>

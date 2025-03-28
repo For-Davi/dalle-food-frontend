@@ -1,11 +1,11 @@
 <script setup lang="ts">
 defineOptions({
-  name: 'App',
+    name: 'App',
 });
 </script>
 
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>

@@ -1,18 +1,19 @@
-import { createApp } from 'vue'
-import { createPinia } from 'pinia'
-import './scss/styles.scss'
-import App from './App.vue'
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
+import App from './App.vue';
 import router from './router';
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
 
 const vuetify = createVuetify({
-    // Configurações opcionais, como temas, diretivas, etc.
-})
-const pinia = createPinia()
-const app = createApp(App)
+    components,
+    directives,
+});
 
-app.use(vuetify)
+const app = createApp(App);
+app.use(createPinia());
 app.use(router);
-app.use(pinia)
-app.mount('#app')
+app.use(vuetify);
+app.mount('#app');
