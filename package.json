@@ -12,14 +12,13 @@
     "format": "prettier --write \"src/**/*.{js,ts,vue,json,css,scss,md}\""
   },
   "dependencies": {
+    "@mdi/font": "^7.4.47",
     "@vueuse/core": "^13.0.0",
     "axios": "^1.8.4",
     "dotenv": "^16.4.7",
     "pinia": "^3.0.1",
-    "vite-plugin-vuetify": "^2.1.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.5.0",
-    "vuetify": "^3.7.19"
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.14",
@@ -35,6 +34,8 @@
     "sass": "^1.86.0",
     "typescript": "~5.7.2",
     "vite": "^6.2.0",
-    "vue-tsc": "^2.2.4"
+    "vite-plugin-vuetify": "^2.1.0",
+    "vue-tsc": "^2.2.4",
+    "vuetify": "^3.7.19"
   }
 }
