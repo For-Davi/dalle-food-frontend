@@ -21,7 +21,6 @@ const updateRender = (data: AuthRender) => {
         <section class="w-100 h-100 bg-auth bg-grey-darken-4">
             <v-img cover src="src/assets/background/bg-auth.jpg"></v-img>
         </section>
-
         <section class="bg-form bg-grey-darken-4">
             <Login v-if="render === 'login'" @update:change-render="updateRender" />
             <Register v-else-if="render === 'register'" @update:change-render="updateRender" />
