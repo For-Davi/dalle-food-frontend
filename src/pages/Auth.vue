@@ -1,46 +1,31 @@
 <script setup lang="ts">
-import { reactive } from 'vue';
+import { ref } from 'vue';
+import { AuthRender } from '../ts/interfaces/auth';
+import Login from '../components/auth/Login.vue';
+import Register from '../components/auth/Register.vue';
+import Reset from '../components/auth/Reset.vue';
 
 defineOptions({
     name: 'Auth',
 });
 
-const dataLogin = reactive({
-    email: '' as string,
-    password: '' as string,
-});
+const render = ref<AuthRender>('login');
+
+const updateRender = (data: AuthRender) => {
+    render.value = data;
+};
 </script>
 
 <template>
-    <main class="container-full d-flex justify-center align-center bg-grey-darken-4">
-        <v-card class="form-auth" :loading="false" variant="tonal">
-            <v-img height="200px" src="src/assets/logos/1.png"></v-img>
-            <v-card-title> Login </v-card-title>
-            <v-form>
-                <v-text-field
-                    v-model="dataLogin.email"
-                    label="Email"
-                    type="email"
-                    variant="outlined"
-                    prepend-inner-icon="mdi-email"
-                    required
-                    autocomplete="new-email"
-                    name="email"
-                ></v-text-field>
-                <v-text-field
-                    v-model="dataLogin.password"
-                    label="Senha"
-                    type="password"
-                    variant="outlined"
-                    prepend-inner-icon="mdi-send"
-                    required
-                    autocomplete="new-password-login"
-                    name="password-login"
-                ></v-text-field>
-            </v-form>
-            <v-card-actions>
-                <v-btn>Click me</v-btn>
-            </v-card-actions>
-        </v-card>
+    <main class="container-full d-flex">
+        <section class="w-100 h-100 bg-auth bg-grey-darken-4">
+            <v-img cover src="src/assets/background/bg-auth.jpg"></v-img>
+        </section>
+
+        <section class="bg-form bg-grey-darken-4">
+            <Login v-if="render === 'login'" @update:change-render="updateRender" />
+            <Register v-else-if="render === 'register'" @update:change-render="updateRender" />
+            <Reset v-else @update:change-render="updateRender" />
+        </section>
     </main>
 </template>
